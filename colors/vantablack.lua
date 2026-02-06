@@ -3,23 +3,23 @@ require("aether").load({
   branch = "v2",
   colors = {
     -- Background colors
-    bg = "#0d0d0d",
-    bg_dark = "#0d0d0d",
-    bg_highlight = "#fdfdfd",
+    bg = "#211F21",
+    bg_dark = "#211F21",
+    bg_highlight = "#949194",
 
     -- Foreground colors
-    fg = "#ffffff",
-    fg_dark = "#ececec",
-    comment = "#fdfdfd",
+    fg = "#e6e9d1",
+    fg_dark = "#e6e9d1",
+    comment = "#949194",
 
     -- Accent colors
-    red = "#a4a4a4",
-    orange = "#a4a4a4",
-    yellow = "#cecece",
-    green = "#b6b6b6",
-    cyan = "#b0b0b0",
-    blue = "#8d8d8d",
-    purple = "#9b9b9b",
-    magenta = "#9b9b9b",
+    red = "#b49f74",
+    orange = "#d6c9ae",
+    yellow = "#BCB676",
+    green = "#82b582",
+    cyan = "#adc7b3",
+    blue = "#b89eaf",
+    purple = "#B8C38E",
+    magenta = "#B8C38E",
   },
 })
