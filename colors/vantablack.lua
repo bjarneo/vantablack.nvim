@@ -1,6 +1,5 @@
 require("aether").load({
   name = "vantablack",
-  branch = "v2",
   colors = {
     -- Background colors
     bg = "#0d0d0d",
