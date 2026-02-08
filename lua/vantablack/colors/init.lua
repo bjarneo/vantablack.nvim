@@ -9,47 +9,55 @@ local default_palette = {
 	bg_dark1 = "#0d0d0d",
 	bg_highlight = "#1a1a1a",
 
-	-- Vantablack accent colors (monochrome)
-	blue = "#8d8d8d",
-	blue0 = "#2a2a2a",
-	blue1 = "#8d8d8d",
-	blue2 = "#8d8d8d",
-	blue5 = "#b0b0b0",
-	blue6 = "#cecece",
-	blue7 = "#1a1a1a",
+	-- Luminance tiers (T1=dimmest UI chrome → T7=brightest focus)
+	-- T1: #505050 ~2.4:1 - gutter, line numbers
+	-- T2: #7a7a7a ~4.5:1 - comments (WCAG AA compliant)
+	-- T3: #888888 ~5.5:1 - operators, punctuation, preprocessor
+	-- T4: #9a9a9a ~6.8:1 - strings, numbers, secondary data
+	-- T5: #b0b0b0 ~9.0:1 - variables, identifiers, properties
+	-- T6: #c8c8c8 ~11.5:1 - keywords, types, control flow
+	-- T7: #e0e0e0 ~15.0:1 - functions, main foreground
 
-	comment = "#fdfdfd",
-	cyan = "#b0b0b0",
+	blue = "#b8b8b8",   -- T5-6: statements, directories, titles
+	blue0 = "#2a2a2a",  -- selection bg
+	blue1 = "#a0a0a0",  -- T5: borders, pmenu match
+	blue2 = "#a0a0a0",  -- T5: info diagnostic
+	blue5 = "#888888",  -- T3: operators, punctuation delimiters
+	blue6 = "#9a9a9a",  -- T4: string.regexp
+	blue7 = "#1a1a1a",  -- diff change bg
 
-	dark3 = "#6d6d6d",
-	dark5 = "#a4a4a4",
+	comment = "#7a7a7a", -- T2: WCAG AA 4.5:1 minimum
+	cyan = "#8a8a8a",    -- T3: preprocessor, macros, special
 
-	fg = "#ffffff",
-	fg_dark = "#ececec",
-	fg_gutter = "#4a4a4a",
+	dark3 = "#606060",   -- between T1-T2: nontext, ignored
+	dark5 = "#909090",   -- T3-4: concealed text
 
-	green = "#b6b6b6",
-	green1 = "#b6b6b6",
-	green2 = "#b6b6b6",
+	fg = "#e0e0e0",      -- T7: main foreground (softer than pure white)
+	fg_dark = "#c8c8c8", -- T6: messages, fallback bright text
+	fg_gutter = "#505050", -- T1: line numbers, gutter
 
-	magenta = "#9b9b9b",
-	magenta2 = "#9b9b9b",
+	green = "#9a9a9a",   -- T4: strings, characters
+	green1 = "#a8a8a8",  -- T5: properties, variable.member
+	green2 = "#a8a8a8",  -- T5: git add
 
-	orange = "#a4a4a4",
-	purple = "#9b9b9b",
+	magenta = "#b0b0b0",  -- T5: constructors
+	magenta2 = "#b0b0b0", -- T5: variables, identifiers
 
-	red = "#a4a4a4",
-	red1 = "#a4a4a4",
+	orange = "#a0a0a0",  -- T4-5: numbers, booleans
+	purple = "#c8c8c8",  -- T6: keywords, constants, conditionals
 
-	teal = "#b0b0b0",
-	terminal_black = "#4a4a4a",
+	red = "#a0a0a0",     -- T4-5: tags
+	red1 = "#c0c0c0",    -- T6: error, git delete (needs visibility)
 
-	yellow = "#cecece",
+	teal = "#909090",    -- T3-4: hints, markup links
+	terminal_black = "#505050", -- T1: terminal black
+
+	yellow = "#c8c8c8",  -- T6: types, labels, parameters, warnings
 
 	-- Git colors will be calculated from the palette colors above
 	git = {},
 
-	special_char = "#cecece",
+	special_char = "#b0b0b0", -- T5
 }
 
 ---@param opts? vantablack.Config

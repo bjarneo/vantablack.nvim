@@ -19,6 +19,9 @@ M.plugins = {
   ["telescope.nvim"] = "telescope",
   ["trouble.nvim"] = "trouble",
   ["which-key.nvim"] = "which-key",
+  ["todo-comments.nvim"] = "todo-comments",
+  ["bufferline.nvim"] = "bufferline",
+  ["render-markdown.nvim"] = "render-markdown",
 }
 
 function M.get_group(name)
@@ -45,6 +48,7 @@ function M.setup(colors, opts)
   local groups = {
     base = true,
     treesitter = true,
+    lsp = true,
   }
 
   -- Always load base groups
@@ -52,6 +56,9 @@ function M.setup(colors, opts)
 
   -- Always load treesitter
   ret = vim.tbl_deep_extend("force", ret, M.get("treesitter", colors, opts))
+
+  -- Always load lsp
+  ret = vim.tbl_deep_extend("force", ret, M.get("lsp", colors, opts))
 
   -- Load plugin groups based on configuration
   for plugin, group_name in pairs(M.plugins) do
